@@ -1,0 +1,122 @@
+{
+    "info": {
+      "_postman_id": "c1f3e4b5-7b8a-4e2d-9f1a-1b2c3d4e5f6a",
+      "name": "Teacher-Student API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Register Students",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"teacher\": \"teachertest1@gmail.com\",\n  \"students\": [\n    \"studenttest1@gmail.com\",\n    \"studenttest2@gmail.com\"\n  ]\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/api/register",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "register"]
+          }
+        }
+      },
+      {
+        "name": "Retrieve Common Students (Single Teacher)",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/api/commonstudents?teacher=teachertest1@gmail.com",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "commonstudents"],
+            "query": [
+              {
+                "key": "teacher",
+                "value": "teachertest1@gmail.com"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Retrieve Common Students (Multiple Teachers)",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/api/commonstudents?teacher=teachertest1@gmail.com&teacher=teachertest2@gmail.com",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "commonstudents"],
+            "query": [
+              {
+                "key": "teacher",
+                "value": "teachertest1@gmail.com"
+              },
+              {
+                "key": "teacher",
+                "value": "teachertest2@gmail.com"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Suspend a Student",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"student\": \"studenttest1@gmail.com\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/api/suspend",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "suspend"]
+          }
+        }
+      },
+      {
+        "name": "Retrieve Students for Notifications",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"teacher\": \"teachertest1@gmail.com\",\n  \"notification\": \"Hello students! @studenttest1@gmail.com @studenttest2@gmail.com\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/api/retrievefornotifications",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "retrievefornotifications"]
+          }
+        }
+      }
+    ]
+  }
