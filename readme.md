@@ -76,7 +76,7 @@ Before you begin, ensure you have the following installed:
 1. **Clone the Repository:**
    - Clone the repository to your local machine:
      ```bash
-     git clone https://github.com/ak06070/teacher-student-api.git
+     git clone https://github.com/ak06070/Node_JS_API.git
      ```
 
 2. **Install Dependencies:**
